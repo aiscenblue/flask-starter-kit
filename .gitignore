@@ -1,0 +1,8 @@
+*.pyc
+*.pyo
+*.db
+*.db.backup
+*.sublime-workspace
+venv/*
+.idea/*
+.DS_Store
