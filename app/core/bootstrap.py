@@ -1,7 +1,9 @@
-from flask import Flask
-from app.core.blueprint import CoreBlueprint
-from config.app import DevelopmentConfig as Config
 from os import path as os_path
+
+from flask import Flask
+
+from app.config.app import DevelopmentConfig as Config
+from app.core.blueprint import CoreBlueprint
 
 
 class Bootstrap:

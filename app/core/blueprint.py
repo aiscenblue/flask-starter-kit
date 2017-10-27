@@ -54,8 +54,9 @@ class CoreBlueprint:
         if "index" in name:
             name = str(name).replace("index", "")
 
+        if name[-1:] == ".":
+            name = name[:-1]
         http_name = str(name).replace(".", "/")
-
         return http_name
 
     @staticmethod
