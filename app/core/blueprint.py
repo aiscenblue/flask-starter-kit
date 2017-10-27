@@ -89,20 +89,19 @@ class CoreBlueprint:
         if hasattr(mod, '__routes__'):
             for route in mod.__routes__:
                 if inspect.isclass(route[2]):
-                    if route[2].__name__ == "Methods":
-                        """ If it's a class it needs to extract the methods by function names
-                            magic functions are excluded
-                        """
-                        route_name, slug, cls = route
-                        for (fn_name, fn_object) in self.get_cls_fn_members(cls):
-                            if inspect.isfunction(fn_object):
-                                mod.__method__.add_url_rule(
-                                    rule=slug,
-                                    endpoint=fn_name,
-                                    view_func=fn_object,
-                                    methods=self.get_http_methods([fn_name]))
-                            else:
-                                raise KeyError("Member is not a function.")
+                    """ If it's a class it needs to extract the methods by function names
+                        magic functions are excluded
+                    """
+                    route_name, slug, cls = route
+                    for (fn_name, fn_object) in self.get_cls_fn_members(cls):
+                        if inspect.isfunction(fn_object):
+                            mod.__method__.add_url_rule(
+                                rule=slug,
+                                endpoint=fn_name,
+                                view_func=fn_object,
+                                methods=self.get_http_methods([fn_name]))
+                        else:
+                            raise KeyError("Member is not a function.")
 
                 elif inspect.isfunction(route[2]):
                     route_name, slug, fn, methods = route
