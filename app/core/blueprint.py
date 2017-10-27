@@ -53,6 +53,8 @@ class CoreBlueprint:
         """ set index automatically as home page """
         if "index" in name:
             name = str(name).replace("index", "")
+        if "routes" in name:
+            name = str(name).replace("routes", "")
 
         """ remove the last . in the string it it ends with a . 
             for the url structure must follow the flask routing format
@@ -61,6 +63,7 @@ class CoreBlueprint:
         if name[-1:] == ".":
             name = name[:-1]
         http_name = str(name).replace(".", "/")
+        print(http_name)
         return http_name
 
     @staticmethod
@@ -128,7 +131,6 @@ class CoreBlueprint:
                 self.model_add_router(mod)
                 root_module = self.root_path.replace(".", "")
                 url_prefix_name = str(name).replace(root_module, "")
-
                 """ register to the blueprint if method attribute found """
                 self.__app.register_blueprint(mod.__method__, url_prefix=self.blueprint_name(url_prefix_name))
 
