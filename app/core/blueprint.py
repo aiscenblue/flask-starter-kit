@@ -54,6 +54,10 @@ class CoreBlueprint:
         if "index" in name:
             name = str(name).replace("index", "")
 
+        """ remove the last . in the string it it ends with a . 
+            for the url structure must follow the flask routing format
+            it should be /model/method instead of /model/method/
+        """
         if name[-1:] == ".":
             name = name[:-1]
         http_name = str(name).replace(".", "/")
