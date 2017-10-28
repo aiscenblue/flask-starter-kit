@@ -5,7 +5,7 @@
 
 class BaseConfig:
     HOST = "127.0.0.1"
-    PORT = 8088
+    PORT = 8000
     ADMINS = frozenset(['aiscenblue@gmail.com'])
     SECRET_KEY = 'SecretKeyForSessionSigning'
     CSRF_ENABLED = True
