@@ -43,5 +43,9 @@ def index():
     return make_response("Welcome to flask starter kit!", 200)
       
 ```
-> blueprint documentation
-> http://flask.pocoo.org/docs/0.12/blueprints/#my-first-blueprint
+> flask blueprint documentation
+> https://github.com/aiscenblue/flask-blueprint
+
+#Configure application core
+`configurations are modified in start.py`
+> https://github.com/aiscenblue/flask-app-core
