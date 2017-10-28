@@ -1,12 +1,12 @@
-#Requirements:
+# Requirements:
 ```
   Python 2.7 or higher
 ```
 
-#Install requirements
+# Install requirements
 `pip install -r requirements.txt`
 
-#Setup configuration
+# Setup configuration
 > open: config/app.py
 ```
 HOST = "0.0.0.0"
@@ -14,7 +14,7 @@ DEBUG = True / False
 PORT = 8000
 ```
 
-#RUN
+# RUN
 > python start.py
 ```
  * Restarting with stat
@@ -24,7 +24,7 @@ PORT = 8000
  ```
 
 
-#Register blueprint
+# Register blueprint
 
 > docs http://flask-starter-kit.readthedocs.io/en/latest/
 
@@ -46,6 +46,6 @@ def index():
 > flask blueprint documentation
 > https://github.com/aiscenblue/flask-blueprint
 
-#Configure application core
+# Configure application core
 `configurations are modified in start.py`
 > https://github.com/aiscenblue/flask-app-core
