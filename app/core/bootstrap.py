@@ -3,7 +3,7 @@ from os import path as os_path
 from flask import Flask
 
 from app.config.app import DevelopmentConfig as Config
-from app.core.blueprint.core import Core
+from flask_blueprint import Core
 
 
 class Bootstrap:
