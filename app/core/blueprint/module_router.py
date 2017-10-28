@@ -114,4 +114,3 @@ class ModuleRouter:
         http_name = str(name).replace(".", "/")
 
         return http_name
-
