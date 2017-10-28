@@ -3,7 +3,7 @@ from os import path as os_path
 from flask import Flask
 
 from app.config.app import DevelopmentConfig as Config
-from app.core.blueprint import CoreBlueprint
+from app.core.blueprint.core import Core
 
 
 class Bootstrap:
@@ -32,5 +32,5 @@ class Bootstrap:
 
     def start(self):
         """ for blueprint registration """
-        CoreBlueprint(app=self.__app, root_path='.module')
+        Core(app=self.__app, root_path='.module')
         self.__app.run(host=Config.HOST, port=Config.PORT)
