@@ -26,6 +26,10 @@ PORT = 8000
 
 # Register blueprint
 
+### flask blueprint documentation
+
+> https://github.com/aiscenblue/flask-blueprint
+
 > docs http://flask-starter-kit.readthedocs.io/en/latest/
 
 `NOTE :: if it's a sub directory it must consist a __init__.py
@@ -43,8 +47,6 @@ def index():
     return make_response("Welcome to flask starter kit!", 200)
       
 ```
-> flask blueprint documentation
-> https://github.com/aiscenblue/flask-blueprint
 
 # Configure application core
 `configurations are modified in start.py`
