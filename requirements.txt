@@ -1,1 +1,1 @@
-flask-app-core==1.2.1
+flask-app-core
