@@ -1,1 +1,5 @@
 flask-app-core
+validators
+neomodel
+bcrypt
+pyjwt

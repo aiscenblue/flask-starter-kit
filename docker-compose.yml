@@ -1,0 +1,12 @@
+version: '2'
+services:
+ neo4j:
+  image: neo4j:latest # pull the latest image
+  environment:
+   - NEO4J_AUTH=neo4j/neo4j # configure the instance with custom username/password
+   - NEO4J_HEAP_MEMORY=2048 # configure the heap memory
+   - NEO4J_CACHE_MEMORY=1G # configure the cache memory
+  volumes:
+   - ./db/dbms:/data/dbms # provision the volumes
+  ports: 
+   - "7474" # expose the port for the console ui

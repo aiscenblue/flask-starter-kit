@@ -5,9 +5,9 @@ import bcrypt
 
 class Users(StructuredNode):
     uid = UniqueIdProperty()
-    firstname = StringProperty(required=True)
-    middlename = StringProperty(default=None)
-    lastname = StringProperty(required=True)
+    first_name = StringProperty(required=True)
+    middle_name = StringProperty(default=None)
+    last_name = StringProperty(required=True)
     email = EmailProperty(unique_index=True, required=True)
     password = StringProperty(required=True)
     created_at = DateTimeProperty(default_now=True)
@@ -15,7 +15,7 @@ class Users(StructuredNode):
     deleted_at = DateTimeProperty(required=False, default=None)
 
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+        super(StructuredNode, self).__init__(*args, **kwargs)
 
     def _validate_email_format(self, email=None):
         __email = email or self.email
@@ -42,7 +42,7 @@ class Users(StructuredNode):
                 user.updated_at = str(user.updated_at)
                 return user
             else:
-                raise PermissionError("Authentication failed.")
+                raise KeyError("Authentication failed.")
         else:
             raise LookupError("Account does not exist!")
 
@@ -69,4 +69,4 @@ class Users(StructuredNode):
             raise LookupError("Account already exist!")
         else:
             self._hash_password()
-            return super().save()
+            return super(Users, self).save()

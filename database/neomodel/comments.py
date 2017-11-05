@@ -1,7 +1,7 @@
 from neomodel import (StructuredNode, UniqueIdProperty, RelationshipTo, StringProperty, DateTimeProperty)
-from database.neo4j.neomodel.edges.timestamp import EdgeRelationship
-from database.neo4j.neomodel.users import Users
-from database.neo4j.neomodel.posts import Posts
+from database.neomodel.edges.timestamp import EdgeRelationship
+from database.neomodel.users import Users
+from database.neomodel.posts import Posts
 
 
 class Comments(StructuredNode):
@@ -34,7 +34,7 @@ class Comments(StructuredNode):
             post = Posts().find_by_id(uid=kwargs['post_id'])
 
             if author and post and post.author.get().__dict__["uid"] == kwargs['user_id']:
-                saved_comment = super().save()
+                saved_comment = super(Comments, self).save()
                 self.author.connect(author)
                 self.post.connect(post)
                 return saved_comment

@@ -1,6 +1,6 @@
 from neomodel import (StructuredNode, UniqueIdProperty, RelationshipTo, StringProperty, DateTimeProperty)
-from database.neo4j.neomodel.edges.timestamp import EdgeRelationship
-from database.neo4j.neomodel.users import Users
+from database.neomodel.edges.timestamp import EdgeRelationship
+from database.neomodel.users import Users
 from werkzeug.utils import secure_filename
 import datetime
 import os
@@ -15,7 +15,7 @@ class Media(StructuredNode):
     deleted_at = DateTimeProperty(required=False, default=None)
 
     def __init__(self):
-        super().__init__(self)
+        super(Media, self).__init__(self)
         self.__extensions = ['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif']
 
     @property
@@ -50,7 +50,7 @@ class Media(StructuredNode):
             __filename = file.name or file.filename
             # submit a empty part without filename
             if __filename:
-                raise FileNotFoundError('No selected file')
+                raise LookupError('No selected file')
             if file and self.allowed_file(__filename):
                 filename = secure_filename('{}-{}'.format(t.strftime('%H-%M-%S'), __filename.lower()))
                 if not os.path.exists(directory):

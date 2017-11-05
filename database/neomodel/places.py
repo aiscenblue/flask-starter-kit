@@ -1,6 +1,6 @@
-from database.neo4j.neomodel.locations import Locations
+from database.neomodel.locations import Locations
 from neomodel import (StructuredNode, StringProperty, DateTimeProperty, UniqueIdProperty, RelationshipTo, JSONProperty, ArrayProperty, IntegerProperty)
-from database.neo4j.neomodel.edges.timestamp import EdgeRelationship
+from database.neomodel.edges.timestamp import EdgeRelationship
 
 
 class Places(StructuredNode):
@@ -37,7 +37,7 @@ class Places(StructuredNode):
         if "location_id" in kwargs:
             location = Locations().find_by_id(uid=kwargs['location_id'])
             if location:
-                saved_location = super().save()
+                saved_location = super(Places, self).save()
                 """ save location relationship after saving the place node """
                 self.locations.connect(location)
                 return saved_location

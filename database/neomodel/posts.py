@@ -1,6 +1,6 @@
 from neomodel import (StructuredNode, UniqueIdProperty, RelationshipTo, StringProperty, DateTimeProperty)
-from database.neo4j.neomodel.edges.timestamp import EdgeRelationship
-from database.neo4j.neomodel.users import Users
+from database.neomodel.edges.timestamp import EdgeRelationship
+from database.neomodel.users import Users
 
 
 class Posts(StructuredNode):
@@ -30,7 +30,7 @@ class Posts(StructuredNode):
         if "user_id" in kwargs:
             author = Users().find_by_id(uid=kwargs['user_id'])
             if author:
-                saved_post = super().save()
+                saved_post = super(Posts, self).save()
                 """ save post relationship after saving the post node """
                 self.author.connect(author)
                 return saved_post
