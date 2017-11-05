@@ -7,4 +7,4 @@ app = __method__
 
 @app.route("/", methods=['GET'])
 def index():
-    return make_response(render_template('index.html', title="Flask Starter Kit!"))
+    return make_response(render_template('/index/view.html', title="Flask Starter Kit!"))
