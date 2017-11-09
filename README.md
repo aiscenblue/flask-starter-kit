@@ -3,6 +3,9 @@
   Python 2.7 or higher
 ```
 
+[![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](https://badge.fury.io/py/flask-app-core)
+[![dependencies Status](https://david-dm.org/boennemann/badges/status.svg)](https://github.com/aiscenblue/flask-starter-kit)
+
 # Install requirements
 `pip install -r requirements.txt`
 
