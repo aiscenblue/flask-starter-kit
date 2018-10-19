@@ -1,5 +1,5 @@
 from flask import Blueprint
-from module.home.methods import index
+from modules.welcome.methods import Methods
 
 """ blueprint module for url handler """
 __method__ = Blueprint(__name__, __name__)
@@ -10,5 +10,5 @@ __method__ = Blueprint(__name__, __name__)
         name, slug, function, methods
 """
 __routes__ = [
-    ("home", "/", index, ['GET'])
+    ("welcome", "/", Methods)
 ]
