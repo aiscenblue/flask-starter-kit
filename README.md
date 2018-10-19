@@ -2,9 +2,7 @@
 ```
   Python 2.7 or higher
 ```
-
-[![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](https://github.com/aiscenblue/flask-starter-kit)
-[![dependencies Status](https://david-dm.org/boennemann/badges/status.svg)](https://github.com/aiscenblue/flask-starter-kit)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 
 # Install requirements
 `pip install -r requirements.txt`
